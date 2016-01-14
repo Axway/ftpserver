@@ -17,11 +17,12 @@
 	<parent>
 		<artifactId>ftpserver-parent</artifactId>
 		<groupId>org.apache.ftpserver</groupId>
-		version>1.0.6-AXWAY-SNAPSHOT</version>
+		<version>1.0.6</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.ftpserver</groupId>
 	<artifactId>ftpserver-core</artifactId>
+	<version>1.0.6-AXWAY-1</version>
 	<name>Apache FtpServer Core</name>
 	<packaging>bundle</packaging>
 	<scm>
