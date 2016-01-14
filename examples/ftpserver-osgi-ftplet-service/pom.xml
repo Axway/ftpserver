@@ -27,7 +27,7 @@
 	<artifactId>ftpserver-osgi-ftplet-service</artifactId>
 	<name>FtpServer OSGi Ftplet service example</name>
 	<packaging>bundle</packaging>
-	<version>1.0.6</version>
+	<version>1.0.6-AXWAY-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.ftpserver</groupId>
