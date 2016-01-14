@@ -27,7 +27,7 @@
 	<artifactId>ftpserver-osgi-spring-service</artifactId>
 	<name>FtpServer OSGi Spring-DM example</name>
 	<packaging>bundle</packaging>
-	<version>1.0.6-AXWAY-SNAPSHOT</version>
+	<version>1.0.6-AXWAY-1</version>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.ftpserver</groupId>
