@@ -200,6 +200,7 @@ public class IODataConnectionFactory implements ServerDataConnectionFactory {
                 // Instead, it creates a regular
                 // ServerSocket that will be wrapped as a SSL socket in createDataSocket()
                 servSoc = new ServerSocket(passivePort, 0, address);
+                servSoc.setReuseAddress(true);
                 LOG
                         .debug(
                                 "SSL Passive data connection created on address \"{}\" and port {}",
@@ -210,6 +211,7 @@ public class IODataConnectionFactory implements ServerDataConnectionFactory {
                                 "Opening passive data connection on address \"{}\" and port {}",
                                 address, passivePort);
                 servSoc = new ServerSocket(passivePort, 0, address);
+                servSoc.setReuseAddress(true);
                 LOG
                         .debug(
                                 "Passive data connection created on address \"{}\" and port {}",
