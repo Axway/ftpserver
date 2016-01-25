@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.ftpserver</groupId>
 	<artifactId>ftpserver-core</artifactId>
-	<version>1.0.6-AXWAY-1</version>
+	<version>1.0.6-AXWAY-2</version>
 	<name>Apache FtpServer Core</name>
 	<packaging>bundle</packaging>
 	<scm>
