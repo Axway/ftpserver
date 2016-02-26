@@ -200,32 +200,41 @@ public class PassivePorts {
 
     public synchronized int reserveNextPort() {
     	// create a copy of the free ports, so that we can keep track of the tested ports
-    	List<Integer> freeCopy = new ArrayList<Integer>(freeList);
-    	
+    	List<Integer> freeCopy = new ArrayList<Integer>(freeList);	
         // Loop until we have found a port, or exhausted all available ports
-        while (freeCopy.size() > 0) {
-            // Otherwise, pick one at random
-            int i = r.nextInt(freeCopy.size());
-            Integer ret = freeCopy.get(i);
-
-            if (ret == 0) {
-                // "Any" port should not be removed from our free list,
-                // nor added to the used list
-                return 0;
-
-            } else if (checkPortUnbound(ret)) {
-                // Not used by someone else, so lets reserve it and return it
+//        while (freeCopy.size() > 0) {
+//            // Otherwise, pick one at random
+//            int i = r.nextInt(freeCopy.size());
+//            Integer ret = freeCopy.get(i);
+//
+//            if (ret == 0) {
+//                // "Any" port should not be removed from our free list,
+//                // nor added to the used list
+//                return 0;
+//
+//            } else if (checkPortUnbound(ret)) {
+//                // Not used by someone else, so lets reserve it and return it
+//                freeList.remove(i);
+//                usedList.add(ret);
+//                return ret;
+//
+//            } else {
+//            	freeCopy.remove(i);
+//                // log port unavailable, but left in pool
+//                log.warn("Passive port in use by another process: " + ret);
+//            }
+//        }
+        for(int i=0; i < freeCopy.size(); i++){
+        	Integer port = freeCopy.get(i);
+        	if(port == 0){
+        		return 0;
+        	}
+        	if(checkPortUnbound(port)){
                 freeList.remove(i);
-                usedList.add(ret);
-                return ret;
-
-            } else {
-            	freeCopy.remove(i);
-                // log port unavailable, but left in pool
-                log.warn("Passive port in use by another process: " + ret);
-            }
+                usedList.add(port);
+                return port;
+        	}
         }
-
         return -1;
     }
 
